@@ -36,7 +36,7 @@ The moment you push in one of these branches, CI/CD will be triggered.
 
 * A formatting script is embedded with POJA. Just run `./format.sh` and your whole code will be formatted using Google Java Format. To quote the GJF team: "There is no configurability as to the formatter's algorithm for formatting. This is a deliberate design decision to unify our code formatting on a single format."
 
-* CI will fail whenever code coverage is below 80%. POJA code are not taken into account in the coverage computation, as they are marked by the annotation `@PojaGenerated`. More generally, any class annotated with `@...Generated` will be excluded from coverage computation.
+* CI will fail whenever code coverage is below 80% (by default, but it's configurable). POJA code are not taken into account in the coverage computation, as they are marked by the annotation `@PojaGenerated`. More generally, any class annotated with `@...Generated` will be excluded from coverage computation.
 
 ### Asynchronous Tasks
 
@@ -50,6 +50,20 @@ The link between the event and its consumer service is automatically done by POJ
 Note that unlike the synchronous stack, the asynchronous stack does _not_ benefit from SnapStart.
 Hence it requires to launch a whole Spring Boot on each cold start.
 We consider this acceptable as the treatment is asynchronous anyway.
+
+### Persistence
+
+#### Database
+
+You can either choose a PostgreSQL running on Aurora v1, or an SQLite running on EFS. If you already have an existing database, and want POJA to use that, no problem.
+
+#### Bucket
+
+POJA comes with an S3 bucket and the associated Java class for handling it. We already coded everything for uploading, downloading and generating presigned URLs for sharing.
+
+### Mailing
+
+We have a Mailer. One line of Java invocation and voilà, your email is sent.
 
 ### Specification and Client Generation
 
