@@ -57,6 +57,12 @@ We consider this acceptable as the treatment is asynchronous anyway.
 
 You can either choose a PostgreSQL running on Aurora v1, or an SQLite running on EFS. If you already have an existing database, and want POJA to use that, no problem.
 
+```diff
+- Use of Aurora v1 is deprecated though. Indeed, AWS announced its end-of-life for December 2024.
+- We are currently considering migrating to Aurora v2. The associated stack would not be serverless though,
+- in the specific sense that it would not scale down to zero.
+```
+
 #### Bucket
 
 POJA comes with an S3 bucket and the associated Java class for handling it. We already coded [everything](https://github.com/hei-school/poja/blob/92eec460ed309349b4dcaab75fd30855ac38d7b0/src/main/java/school/hei/poja/file/BucketComponent.java#L24) for uploading, downloading and generating presigned URLs for sharing.
