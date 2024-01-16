@@ -55,7 +55,9 @@ We consider this acceptable as the treatment is asynchronous anyway.
 
 #### Database
 
-You can either choose a PostgreSQL running on Aurora v1, or an SQLite running on EFS. If you already have an existing database, and want POJA to use that, no problem.
+You can either choose a PostgreSQL running on Aurora v1, or an SQLite running on EFS.
+If you already have an existing database, even outside AWS -- such as on [Neon](https://neon.tech/),
+then no problem at all: poja allows you to point to it by defining your custom/associated environnement variables.
 
 ```diff
 - Use of Aurora v1 is deprecated though.
