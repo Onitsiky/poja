@@ -59,11 +59,11 @@ You can either choose a PostgreSQL running on Aurora v1, or an SQLite running on
 
 #### Bucket
 
-POJA comes with an S3 bucket and the associated Java class for handling it. We already coded everything for uploading, downloading and generating presigned URLs for sharing.
+POJA comes with an S3 bucket and the associated Java class for handling it. We already coded [everything](https://github.com/hei-school/poja/blob/92eec460ed309349b4dcaab75fd30855ac38d7b0/src/main/java/school/hei/poja/file/BucketComponent.java#L24) for uploading, downloading and generating presigned URLs for sharing.
 
 ### Mailing
 
-We have a Mailer. One line of Java invocation and voilà, your email is sent.
+We have a [Mailer](https://github.com/hei-school/poja/blob/prod/src/main/java/school/hei/poja/mail/Mailer.java). One method `Mailer::send` and voilà, your email is sent.
 
 ### Specification and Client Generation
 
