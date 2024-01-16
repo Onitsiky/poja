@@ -58,8 +58,10 @@ We consider this acceptable as the treatment is asynchronous anyway.
 You can either choose a PostgreSQL running on Aurora v1, or an SQLite running on EFS. If you already have an existing database, and want POJA to use that, no problem.
 
 ```diff
-- Use of Aurora v1 is deprecated though. Indeed, AWS announced its end-of-life for December 2024.
-- We are currently considering migrating to Aurora v2. The associated stack would not be serverless though,
+- Use of Aurora v1 is deprecated though.
+- Indeed, AWS announced its end-of-life for December 2024.
+- We are currently considering migrating to Aurora v2.
+- The associated stack would not be serverless though,
 - in the specific sense that it would not scale down to zero.
 ```
 
