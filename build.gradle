@@ -47,6 +47,7 @@ test {
 }
 
 jacocoTestCoverageVerification {
+    dependsOn test
     violationRules {
         rule {
             limit {
@@ -55,6 +56,7 @@ jacocoTestCoverageVerification {
             }
         }
     }
+    finalizedBy jacocoTestReport
 }
 
 jacocoTestReport {
