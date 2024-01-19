@@ -14,12 +14,14 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import school.hei.poja.PojaGenerated;
 import school.hei.poja.conf.FacadeIT;
 import school.hei.poja.endpoint.event.EventConsumer;
 import school.hei.poja.endpoint.event.gen.UuidCreated;
 import software.amazon.awssdk.services.sqs.SqsClient;
 import software.amazon.awssdk.services.sqs.model.DeleteMessageRequest;
 
+@PojaGenerated
 public class SqsMessageAckTyperTest extends FacadeIT {
   public static final String UNKNOWN_TYPENAME = "unknown_typename";
   @Autowired EventConsumer.SqsMessageAckTyper subject;
