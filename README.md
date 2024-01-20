@@ -83,4 +83,4 @@ If you directly started implementing without specifying, first you shouldn't hav
 
 ## Looking for a Python version?
 
-Take a look at [Giha](https://github.com/hei-school/gicha)
+Take a look at [Gicha](https://github.com/hei-school/gicha).
