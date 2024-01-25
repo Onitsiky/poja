@@ -22,7 +22,7 @@ import software.amazon.awssdk.services.sqs.SqsClient;
 import software.amazon.awssdk.services.sqs.model.DeleteMessageRequest;
 
 @PojaGenerated
-public class SqsMessageAckTyperTest extends FacadeIT {
+public class SqsMessageAckTyperTest extends <?java-facade-it> {
   public static final String UNKNOWN_TYPENAME = "unknown_typename";
   @Autowired EventConsumer.SqsMessageAckTyper subject;
   @Autowired ObjectMapper om;

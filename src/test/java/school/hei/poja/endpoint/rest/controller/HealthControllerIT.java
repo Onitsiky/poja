@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @PojaGenerated
-class HealthControllerIT extends FacadeIT {
+class HealthControllerIT extends <?java-facade-it> {
 
   @Autowired PingController pingController;
   @Autowired HealthDbController healthDbController;

@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import school.hei.poja.conf.FacadeIT;
 
-public class ObjectMapperTest extends FacadeIT {
+public class ObjectMapperTest extends <?java-facade-it> {
   @Autowired ObjectMapper injectedBean;
   ObjectMapper newInstance = new ObjectMapper();
 

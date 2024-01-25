@@ -14,7 +14,7 @@ import school.hei.poja.endpoint.event.gen.UuidCreated;
 import school.hei.poja.repository.DummyUuidRepository;
 
 @PojaGenerated
-class EventConsumerIT extends FacadeIT {
+class EventConsumerIT extends <?java-facade-it> {
 
   @Autowired EventConsumer subject;
   @Autowired DummyUuidRepository dummyUuidRepository;
