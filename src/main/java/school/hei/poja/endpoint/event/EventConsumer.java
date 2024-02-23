@@ -1,11 +1,13 @@
 package school.hei.poja.endpoint.event;
 
+import api.bpartners.annotator.concurrency.Workers;
 import com.amazonaws.services.lambda.runtime.events.SQSEvent;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Callable;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import lombok.AllArgsConstructor;
@@ -17,12 +19,15 @@ import school.hei.poja.PojaGenerated;
 import software.amazon.awssdk.services.sqs.SqsClient;
 import software.amazon.awssdk.services.sqs.model.DeleteMessageRequest;
 
+import static java.util.stream.Collectors.toList;
+
 @PojaGenerated
 @Component
 @Slf4j
 public class EventConsumer implements Consumer<List<EventConsumer.AcknowledgeableTypedEvent>> {
   private static final String DETAIL_PROPERTY = "detail";
   private static final String DETAIL_TYPE_PROPERTY = "detail-type";
+  private final Workers<Void> workers;
   private final EventServiceInvoker eventServiceInvoker;
 
   public EventConsumer(EventServiceInvoker eventServiceInvoker) {
@@ -31,10 +36,15 @@ public class EventConsumer implements Consumer<List<EventConsumer.Acknowledgeabl
 
   @Override
   public void accept(List<AcknowledgeableTypedEvent> ackEvents) {
-    for (AcknowledgeableTypedEvent ackEvent : ackEvents) {
+    workers.invokeAll(ackEvents.stream().map(this::toCallable).collect(toList()));
+  }
+
+  private Callable<Void> toCallable(AcknowledgeableTypedEvent ackEvent) {
+    return () -> {
       eventServiceInvoker.accept(ackEvent.getEvent());
       ackEvent.ack();
-    }
+      return null;
+    };
   }
 
   @AllArgsConstructor
@@ -57,10 +67,10 @@ public class EventConsumer implements Consumer<List<EventConsumer.Acknowledgeabl
 
     @Override
     public List<AcknowledgeableTypedEvent> apply(List<SQSEvent.SQSMessage> sqsMessages) {
-      return toAcknowledgeableEvent(sqsMessages);
+      return toAcknowledgeableEvents(sqsMessages);
     }
 
-    public List<AcknowledgeableTypedEvent> toAcknowledgeableEvent(
+    public List<AcknowledgeableTypedEvent> toAcknowledgeableEvents(
         List<SQSEvent.SQSMessage> messages) {
       var res = new ArrayList<AcknowledgeableTypedEvent>();
       for (SQSEvent.SQSMessage message : messages) {
