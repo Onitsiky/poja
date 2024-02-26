@@ -1,6 +1,6 @@
 package school.hei.poja.endpoint.event;
 
-import api.bpartners.annotator.concurrency.Workers;
+import school.hei.poja.concurrency.Workers;
 import com.amazonaws.services.lambda.runtime.events.SQSEvent;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
