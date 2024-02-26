@@ -30,7 +30,8 @@ public class EventConsumer implements Consumer<List<EventConsumer.Acknowledgeabl
   private final Workers<Void> workers;
   private final EventServiceInvoker eventServiceInvoker;
 
-  public EventConsumer(EventServiceInvoker eventServiceInvoker) {
+  public EventConsumer(Workers<Void> workers, EventServiceInvoker eventServiceInvoker) {
+    this.workers = workers;
     this.eventServiceInvoker = eventServiceInvoker;
   }
 
