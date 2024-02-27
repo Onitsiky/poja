@@ -32,8 +32,6 @@ Resources:
       MasterUserPassword: !Sub '{{resolve:ssm:/<?app-name>/${Env}/db/password}}'
       <?db-sg-ids>
       ScalingConfiguration:
-        SecondsUntilAutoPause:
-          !If [ IsProdEnv,  !Ref ProdDbClusterTimeout, 300 ]
         <?db-scaling-capacities>
 
 
