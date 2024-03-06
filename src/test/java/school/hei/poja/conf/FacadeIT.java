@@ -26,6 +26,7 @@ public class FacadeIT {
     new EventConf().configureProperties(registry);
     new BucketConf().configureProperties(registry);
     new EmailConf().configureProperties(registry);
+    <?sentry-test-env>
 
     try {
       var envConfClazz = Class.forName("school.hei.poja.conf.EnvConf");
