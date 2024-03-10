@@ -19,11 +19,35 @@ POJA stands for POstgres JAva as, in the beginning, it only supported the genera
 
 ## Usage
 
-Create a new Poja stack in minutes using the [POJA CLI](https://github.com/hei-school/poja-cli).
+Create a new Poja stack in minutes using the [poja CLI](https://github.com/hei-school/poja-cli).
 Update an existing Poja stack in seconds using the same CLI!
 
 Say good bye to the days where you had hard times launching new Java/Github/AWS stacks,
 and even harder times trying to apply infrastructure fixes or infrastructure features you developped on a stack that you want to apply on other stacks!
+
+## Success Stories
+
+### For Professionals
+
+poja is currently used by multiple companies to manage some of their critical projects, such as:
+* An asynchronous data processing with millions of messages to process, millions of files to read and write, thousands of lambda, and thousands of database connections per second,
+* A payment solution that meets the security standards required by European Payment Service Providers when integrating them, with hundreds of thousand euros of payment initiated so far,
+* Administration dashboards used by hundreds of people.
+
+As of March 2024, [poja CLI](https://github.com/hei-school/poja-cli) is amongst the [top 5%](https://github.com/hei-school/poja-cli/blob/main/top-pypi-packages-last-30-days-8-march.json) most downloaded package on [PyPi](https://pypi.org/project/poja). Trust us, it's battle-tested!
+
+Contact [Numer](https://www.numer.tech) if you want to know more about how they successfuly implemented poja in their customer projects. 
+
+### For Academics
+
+Due to its serverless nature and its one-command setup, poja has been heavily used for teaching purposes.
+Indeed, poja allows to operate school projects on the same level of quality as enterprise-grade projects,
+but without paying almost any cost at all since school projects are seldom used,
+and without needing any DevOps that do all the hard configurations that are out of reach of most students.
+So far, hundreds of exam environments have been spawned through poja.
+
+Contact [HEI](https://hei.school) if you want to know more about how they successfuly implemented poja in their programming courses.
+
 
 ## Features
 
