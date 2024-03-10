@@ -43,7 +43,7 @@ Contact [Numer](https://www.numer.tech) if you want to know more about how they 
 Due to its serverless nature and its one-command setup, poja has been heavily used for teaching purposes.
 Indeed, poja allows to operate school projects on the same level of quality as enterprise-grade projects,
 but without paying almost any cost at all since school projects are seldom used,
-and without needing any DevOps that do all the hard configurations that are out of reach of most students.
+and without needing any DevOps to perform all the hard configurations that are out of reach of most students.
 So far, hundreds of exam environments have been spawned through poja.
 
 Contact [HEI](https://hei.school) if you want to know more about how they successfuly implemented poja in their programming courses.
