@@ -30,7 +30,7 @@ and even harder times trying to apply infrastructure fixes or infrastructure fea
 ### For Professionals
 
 poja is currently used by multiple companies to manage some of their critical projects, such as:
-* An asynchronous data processing with millions of messages to process, millions of files to read and write, thousands of lambda, and thousands of database connections per second,
+* An asynchronous data processing with millions of messages to handle, millions of files to read and write, thousands of lambda, and thousands of database connections per second,
 * A payment solution that meets the security standards required by European Payment Service Providers when integrating them, with hundreds of thousand euros of payment initiated so far,
 * Administration dashboards used by hundreds of people.
 
