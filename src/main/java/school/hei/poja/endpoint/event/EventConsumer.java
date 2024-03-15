@@ -84,14 +84,16 @@ public class EventConsumer implements Consumer<List<EventConsumer.Acknowledgeabl
           continue;
         }
         AcknowledgeableTypedEvent acknowledgeableTypedEvent =
-            new AcknowledgeableTypedEvent(
-                typedEvent,
-                () ->
-                    sqsClient.deleteMessage(
-                        DeleteMessageRequest.builder()
-                            .queueUrl(eventConf.getSqsQueue())
-                            .receiptHandle(message.getReceiptHandle())
-                            .build()));
+          new AcknowledgeableTypedEvent(
+            typedEvent,
+            () -> {
+              sqsClient.deleteMessage(
+                DeleteMessageRequest.builder()
+                  .queueUrl(eventConf.getSqsQueue())
+                  .receiptHandle(message.getReceiptHandle())
+                  .build());
+              log.info("deleted message: {}", message);
+            });
         res.add(acknowledgeableTypedEvent);
       }
       return res;
